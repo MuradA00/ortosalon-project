@@ -1,0 +1,10 @@
+
+.--def-title {
+  font-size: clamp(rem(32 ), vw(50), rem(50));
+  font-weight: 700;
+  line-height: 136%;
+  color: var(--clr-text);
+  text-align: center;
+  margin-bottom: rem(17);
+  display: block;
+}

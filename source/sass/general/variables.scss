@@ -1,0 +1,41 @@
+:root {
+    /* -- Fonts --*/
+    --ff: 'Open Sans', sans-serif;
+    // colors
+    --clr-light-400: hsla(0, 0%, 100%, 1);
+    --clr-red-400: hsla(350, 100%, 44%, 1);
+    --clr-text: hsla(0, 0%, 33%, 1);
+    --clr-yell-400: hsla(41, 96%, 59%, 1);
+    --clr-blue-500: hsla(210, 54%, 56%, 1);
+    --clr-green-400: hsla(86, 64%, 43%, 1);
+    --clr-light-300: hsla(0, 0%, 33%, 0.04);
+    --clr-pseudo: linear-gradient(270deg, rgba(251, 187, 49, 0) 0%, rgba(251, 187, 49, 0.18) 50.31%, rgba(251, 187, 49, 0) 100%);
+    // shadow
+    --white-box-shadow: 0px 3px 50px 0px hsla(0, 0%, 0%, 0.1);
+}
+
+$middle-spacing-padding: rem(50);
+$cont-padding: clamp(rem(15), vw(20), rem(20));
+$container-width: rem(1140);
+$mobile-cont-padding: rem(15);
+$br-12: 12px;
+
+$tm: em(1050);
+$mm: em(650);
+
+.--container {
+  padding: 0 $cont-padding;
+  max-width: calc($container-width + $cont-padding);
+  margin-inline: auto;
+  width: 100%;
+  @include max-width($tm) {
+    padding: 0 $mobile-cont-padding;
+    max-width: calc(rem(765) + $mobile-cont-padding);
+  }
+  @include max-width($mm) {
+    max-width: calc(rem(515) + $mobile-cont-padding);
+  }
+}
+
+
+
