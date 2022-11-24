@@ -17,7 +17,7 @@ function scrollEvents() {
       }
     })
   }, {
-    threshold: 0.5
+    threshold: 0.6
   })
 
   sections.forEach(section => {
