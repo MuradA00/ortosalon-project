@@ -1,0 +1,121 @@
+.steps {
+  position: absolute;
+  right: rem(60);
+  top: 50%;
+  width: fit-content;
+  transform: translateY(-50%);
+  z-index: 10000;
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: rem(8);
+    & > * {
+      color: var(--clr-text);
+    }
+  }
+  .steps-numbers {
+    flex: 0 0 auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(12);
+    &__item {
+      width: rem(42);
+      height: rem(42);
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: rem(20);
+      color: hsla(0, 0%, 33%, 0.16);
+      background-color: hsla(350, 100%, 44%, 0.06);
+    }
+  }
+}
+
+.home {
+  .steps {
+    &__inner {
+      & > * {
+        color: var(--clr-light-400);
+      }
+    }
+    .steps-numbers {
+      &__item {
+        color: var(--clr-light-400);
+        background-color: hsla(0, 0%, 100%, 0.14);
+      }
+    }
+  }
+}
+
+.--active-number {
+  background-color: var(--clr-red-400) !important;
+  color: var(--clr-light-400) !important;
+}
+
+@include max-width(em(1700)) {
+  .steps {
+    right: rem(20);
+  }
+}
+
+@include max-width(em(1650)) {
+  .steps {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 0;
+    }
+    .steps-numbers {
+      display: flex;
+      flex-direction: row;
+    }
+    .steps-names {
+      &__item {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+.steps-names {
+  &__item {
+    height: rem(42);
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+}
+
+@include max-width($tm) {
+  .steps {
+    position: initial;
+    transform: translate(0);
+    margin: 0 auto 1rem;
+    &__inner {
+      grid-gap: rem(5);
+    }
+  }
+  .steps-numbers {
+    grid-gap: rem(5) !important;
+    &__item {
+      font-size: .9375rem !important;
+      width: rem(32) !important;
+      height: 2rem !important;
+    }
+  }
+  .steps-names {
+    &__item {
+      height: fit-content;
+      font-size: .9375rem;
+    }
+  }
+}

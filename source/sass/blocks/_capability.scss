@@ -1,0 +1,72 @@
+.capability-row {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: rem(65) rem(70);
+  max-width: 29.5rem;
+  justify-content: center;
+  align-items: center;
+  &__item {
+    background-color: var(--clr-light-400);
+    border-radius: 31px;
+    width: 100%;
+    max-width: rem(200);
+    min-height: rem(200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &::before {
+      @include psevdo;
+      top: 0;
+      left: 0;
+      background-color: hsla(0, 0%, 100%, 0.3);
+      width: 100%;
+      height: 100%;
+      transform: rotate(12deg);
+      border-radius: inherit;
+
+    }
+  }
+  &__inner {
+    position: relative;
+    z-index: 10;
+  }
+  &__descr {
+    p {
+      color: var(--clr-text);
+      text-align: center;
+      font-size: rem(20);
+      font-weight: 700;
+    }
+  }
+  &__icon {
+    margin-bottom: rem(10);
+    max-width: rem(100);
+    margin-inline: auto;
+  }
+}
+
+@include max-width($tm) {
+  .capability-row {
+    grid-gap: rem(40);
+    &__descr {
+      p {
+        font-size: 1rem;
+      }
+    }
+    &__item {
+      max-width: rem(150);
+      min-height: rem(150);
+    }
+    &__icon {
+      max-width: rem(60);
+    }
+  }
+}
+
+@include max-width($mm) {
+  .capability-row {
+    grid-gap: rem(20);
+  }
+}

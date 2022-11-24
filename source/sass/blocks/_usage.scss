@@ -1,0 +1,113 @@
+.usage {
+  background-color: var(--clr-light-300);
+  padding: clamp(rem(60), vw(115), rem(115)) 0;
+  @include max-width($tm) {
+    padding: $middle-spacing-padding 0;
+  }
+  position: relative;
+  .steps-names {
+    &__item {
+      margin-top: 6.7rem;
+    }
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: auto minmax(rem(540), rem(450));
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: clamp(rem(40), vw(83), rem(83));
+  }
+  .capability-row {
+    &__item {
+      background-color: var(--clr-light-400);
+      z-index: 100;
+      &--stock {
+        .capability-row__icon {
+          max-width: rem(151);
+        }
+      }
+      &::before {
+        z-index: -1;
+        background-color: hsla(210, 54%, 56%, 0.07);
+      }
+    }
+  }
+  &__title {
+    text-align: left;
+    margin-bottom: rem(15);
+  }
+  &__subheading {
+    font-size: rem(20);
+    margin-bottom: rem(23);
+  }
+  &__list {
+    margin-bottom: rem(20);
+  }
+  &__warning {
+    font-size: rem(20);
+  }
+}
+
+.usage-row {
+  display: flex;
+  flex-direction: column;
+  grid-gap: rem(10);
+  &__item {
+    font-size: rem(20);
+    display: flex;
+    align-items: center;
+    grid-gap: rem(25);
+    span {
+      display: block;
+      width: rem(3.5);
+      height: rem(3.5);
+      background-color: var(--clr-text);
+      border-radius: 50%;
+      flex: 0 auto;
+    }
+  }
+}
+
+@include max-width(em(1120)) {
+  .usage {
+    &__body {
+      width: fit-content;
+      display: flex;
+      flex-direction: column-reverse;
+      max-width: rem(700);
+      margin-inline: auto;
+    }
+  }
+}
+
+@include max-width($mm) {
+  .usage {
+    &__subheading {
+      font-size: 1rem;
+    }
+    &__warning {
+      font-size: rem(14);
+    }
+  }
+  .usage-row {
+    &__item {
+      font-size: .9375rem;
+    }
+  }
+}
+
+@include max-width(em(1650)) {
+  .usage {
+    &__container {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@include max-width($tm) {
+  .usage {
+    &__container {
+      margin-top: 0;
+    }
+  }
+}

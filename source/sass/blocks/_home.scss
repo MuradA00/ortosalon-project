@@ -1,0 +1,151 @@
+.home {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: rem(36) 0 rem(88);
+  position: relative;
+  &__container {
+    max-width: calc(rem(1240) + $cont-padding);
+  }
+  &__body {
+    & > * {
+      color: var(--clr-light-400);
+    }
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    grid-gap: rem(8);
+    font-size: rem(12);
+    span {
+      display: block;
+      background-color: var(--clr-red-400);
+      border-radius: 50%;
+      width: rem(4);
+      height: rem(4);
+    }
+  }
+  &__inner {
+    margin-top: rem(62);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: clamp(rem(50), vw(80), rem(80));
+  }
+  &__top-title {
+    color: var(--clr-yell-400);
+    font-size: clamp(rem(16), vw(20), rem(20));
+    font-weight: 600;
+  }
+  &__title {
+    font-size: clamp(rem(40), vw(65), rem(65));
+    margin-bottom: rem(26);
+    span {
+      color: var(--clr-yell-400);
+    }
+  }
+  &__descr {
+    padding-left: rem(22);
+    position: relative;
+    max-width: rem(450);
+    p {
+      font-size: rem(20);
+      line-height: 155%;
+    }
+    &::before {
+      @include psevdo;
+      left: 0;
+      top: rem(2);
+      width: 2px;
+      height: 100%;
+      background-size: cover;
+      background-image: url('../../img/home/pseudo-line.svg');
+    }
+  }
+  &__bonus-block {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    border-radius: 0 $br-12 $br-12;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: rem(17) clamp(rem(20), vw(95), rem(95));
+    width: 50%;
+    left: 0;
+    bottom: rem(88);
+    grid-gap: rem(24);
+    z-index: 100;
+  }
+  &__bonus-image {
+    max-width: rem(135);
+  }
+  &__bonus-info-heading {
+    font-size: clamp(rem(20), vw(30), rem(30));
+  }
+  &__bonus-span {
+    color: hsla(321, 100%, 38%, 1);
+    font-size: rem(20);
+    font-weight: 700;
+  }
+}
+
+@include max-width($tm) {
+  .home {
+    &__body {
+      max-width: rem(500);
+      margin-inline: auto;
+    }
+    &__inner {
+      margin-top: rem(35);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    &__descr {
+      p {
+        font-size: 1rem;
+      }
+    }
+    &__bonus-block {
+      position: initial;
+      width: 100%;
+      border-radius: $br-12;
+      padding: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    &__bonus-image {
+      max-width: rem(100);
+    }
+    &__bonus-info {
+      text-align: center;
+    }
+    &__bonus-span {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include max-width($mm) {
+  .home {
+    padding: $middle-spacing-padding 0;
+    &__bonus-block {
+      grid-gap: .5rem;
+      flex-direction: column;
+    }
+    &__title {
+      font-size: rem(32);
+    }
+    &__descr {
+      p {
+        font-size: .9375rem;
+      }
+    }
+    &__top-title {
+      font-size: .9375rem;
+    }
+    &__name-text {
+      font-size: rem(10);
+    }
+  }
+}

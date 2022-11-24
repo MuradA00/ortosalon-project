@@ -2,11 +2,17 @@
 
 .bonus {
   background-color: var(--clr-light-300);
-  &__body {
-    padding: clamp(rem(70), vw(106), rem(106)) 0;
-    @include max-width($tm) {
-      padding: $middle-spacing-padding 0;
+  position: relative;
+  padding: clamp(rem(70), vw(106), rem(106)) 0;
+  .steps-names {
+    &__item {
+      margin-top: 3.3rem;
     }
+  }
+  @include max-width($tm) {
+    padding: $middle-spacing-padding 0;
+  }
+  &__body {
   }
   &__heading {
     margin-bottom: rem(41);
@@ -139,8 +145,25 @@
   &__icon {
     text-align: center;
     padding-bottom: rem(21);
+    position: relative;
+    &::before {
+      @include psevdo;
+      left: 0;
+      bottom: .5rem;
+      width: 100%;
+      background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.18) 50.31%, rgba(255, 255, 255, 0) 100%);
+      height: rem(2);
+    }
   }
   &__info {
+    position: relative;
+    &:not(:last-child)::before {
+      @include psevdo;
+      bottom: .5rem;
+      width: 100%;
+      background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.18) 50.31%, rgba(255, 255, 255, 0) 100%);
+      height: rem(2);
+    }
     span {
       font-weight: 600;
     }
@@ -154,6 +177,9 @@
 
 @include max-width($tm) {
   .bonus {
+    &__heading {
+      margin-top: 0;
+    }
     &__icon {
       max-width: rem(110) !important;
     }
@@ -196,6 +222,14 @@
       span {
         font-size: rem(12);
       }
+    }
+  }
+}
+
+@include max-width(em(1650)) {
+  .bonus {
+    &__title {
+      margin-top: 1rem;
     }
   }
 }

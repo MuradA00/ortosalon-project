@@ -1,10 +1,16 @@
 .remain {
-  background-image: url('../../img/remain/remain-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  &__body {
-    padding: clamp(rem(80), vw(103), rem(103)) 0 clamp(rem(120), vw(182), rem(182));
+  position: relative;
+  padding: clamp(rem(80), vw(103), rem(103)) 0 clamp(rem(120), vw(182), rem(182));
+  @include max-width($tm) {
+    padding: $middle-spacing-padding 0;
+  }
+  .steps-names {
+    &__item {
+      margin-top: 10.1rem;
+    }
   }
   &__inner {
     display: grid;
@@ -48,6 +54,8 @@
     border-radius: 90px;
     min-height: rem(48);
     display: flex;
+    justify-content: center;
+    text-align: center;
     align-items: center;
     padding: 0 2.1rem;
     transition: all 400ms ease;

@@ -1,9 +1,13 @@
 .terms {
   background-color: var(--clr-light-400);
-  &__body {
-    padding: clamp(rem(60), vw(104), rem(104)) 0 clamp(rem(60), vw(120), rem(120));
-    @include max-width($tm) {
-      padding: $middle-spacing-padding 0;
+  padding: clamp(rem(60), vw(104), rem(104)) 0 clamp(rem(60), vw(120), rem(120));
+  @include max-width($tm) {
+    padding: $middle-spacing-padding 0;
+  }
+  position: relative;
+  .steps-names {
+    &__item {
+      margin-top: 13.5rem;
     }
   }
   &__row {
@@ -52,6 +56,9 @@
 
 @include max-width($tm) {
   .terms {
+    &__title {
+      margin-top: 0;
+    }
     &__descr {
       p {
         font-size: rem(14);
@@ -80,3 +87,12 @@
     }
   }
 }
+
+@include max-width(em(1650)) {
+  .terms {
+    &__title {
+      margin-top: 1rem;
+    }
+  }
+}
+
