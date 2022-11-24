@@ -162,6 +162,10 @@
       display: flex;
       flex-direction: column;
       grid-gap: rem(30);
+      &::after {
+        width: 100% !important;
+        height: rem(2) !important;
+      }
     }
     &__link {
       max-width: rem(250);
@@ -173,6 +177,9 @@
           margin-bottom: 2rem;
         }
       }
+    }
+    &__column-block {
+      min-height: rem(240);
     }
   }
 }
