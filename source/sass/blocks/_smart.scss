@@ -5,49 +5,70 @@
   padding: clamp(rem(60), vw(104), rem(104)) 0 clamp(rem(60), vw(101), rem(101));
   &__body {
     display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: rem(30);
   }
   &__info {
-    max-width: rem(445);
     & > * {
       color: var(--clr-light-400);
     }
   }
   &__title {
+    color: var(--clr-light-400);
     text-align: left;
     margin-bottom: rem(40);
   }
   &__info-block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
     border-radius: 30px;
     border: 1px solid var(--clr-light-400);
     padding: rem(15) rem(20);
     margin-bottom: rem(21);
+    &:nth-child(2) {
+      min-height: rem(200);
+    }
+
   }
   &__info-inner {
-    max-width: rem(346);
+
     p {
-      font-size: rem(20);
+      font-size: rem(24);
       font-weight: 600;
     }
   }
   &__info-heading {
     line-height: 155%;
-    font-size: rem(20);
+    font-size: rem(24);
     margin-bottom: rem(5);
   }
   .capability-row {
+    max-width: rem(526);
+    grid-gap: rem(20);
+    &__inner {
+      display: flex;
+      align-items: center;
+      grid-gap: rem(30);
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-start;
+    }
     &__item {
-      &:nth-child(2) {
-        position: relative;
-        &::after {
-          content: url('../../img/smart-section/white-arrow.svg');;
-          position: absolute;
-          top: 55%;
-          left: -18%;
-          transform: translate(-50%, -50%);
-        }
+      min-height: rem(109);
+      max-width: 100%;
+      padding: 0 rem(20);
+      &::before {
+        transform: rotate(3deg);
       }
+      &:hover::before {
+        transform: rotate(-3deg);
+      }
+    }
+    &__icon {
+      margin-bottom: 0;
+      margin-inline: unset;
+      max-width: rem(71);
     }
   }
 }
@@ -61,11 +82,11 @@
     display: flex;
     align-items: center;
     grid-gap: rem(13);
-    font-size: rem(20);
+    font-size: rem(24);
     span {
       display: block;
-      width: rem(4);
-      height: rem(4);
+      width: rem(6);
+      height: rem(6);
       border-radius: 50%;
       background-color: var(--clr-light-400);
     }
@@ -75,6 +96,8 @@
 @include max-width($tm) {
   .smart {
     &__body {
+      max-width: rem(530);
+      align-items: center;
       display: flex;
       flex-direction: column;
       grid-gap: 2rem;
@@ -84,8 +107,12 @@
     &__title {
       text-align: center;
     }
+    &__info-inner {
+      p {}
+    }
   }
   .capability-row {
+
     &__item {
       &:nth-child(2) {
         &::after {
@@ -103,9 +130,31 @@
 
 @include max-width($mm) {
   .smart {
+    &__info-heading {
+      font-size: rem(20);
+    }
+    &__info-inner {
+      p {
+        font-size: rem(20 );
+      }
+    }
+    .smart-list {
+      &__item {
+        font-size: rem(20);
+      }
+    }
     .capability-row {
       flex-direction: column;
+      &__inner {
+        flex-direction: column;
+        grid-gap: rem(10);
+      }
+      &__icon {
+        max-width: rem(60);
+      }
       &__item {
+        max-width: 9.375rem;
+        min-height: 9.375rem;
         &:nth-child(2) {
           &::after {
             content: none !important;

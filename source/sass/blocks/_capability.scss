@@ -25,7 +25,10 @@
       height: 100%;
       transform: rotate(12deg);
       border-radius: inherit;
-
+      transition: 400ms ease;
+    }
+    &:hover::before {
+      transform: rotate(-12deg);
     }
   }
   &__inner {
