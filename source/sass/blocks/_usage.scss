@@ -20,10 +20,14 @@
   .capability-row {
     &__item {
       background-color: var(--clr-light-400);
-
       &--stock {
         .capability-row__icon {
           max-width: rem(151);
+        }
+      }
+      &--long-text {
+        .capability-row__icon {
+          max-width: rem(91);
         }
       }
       &::before {
@@ -114,6 +118,11 @@
         &--stock {
           .capability-row__icon {
             max-width: rem(100);
+          }
+        }
+        &--long-text {
+          .capability-row__icon {
+            max-width: rem(60);
           }
         }
       }

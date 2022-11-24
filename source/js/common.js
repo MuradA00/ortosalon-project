@@ -6,9 +6,9 @@ function scrollEvents() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        sectionLinks.forEach(link => {
+        sectionLinks.forEach((link) => {
           const linkOrder = link.getAttribute('href').replace('#', '');
-          if (linkOrder === entry.target.id) {
+          if (linkOrder == entry.target.id) {
             link.classList.add('--active-number')
           } else {
             link.classList.remove('--active-number')
@@ -17,7 +17,7 @@ function scrollEvents() {
       }
     })
   }, {
-    threshold: 0.8
+    threshold: 0.5
   })
 
   sections.forEach(section => {
