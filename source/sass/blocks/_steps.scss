@@ -6,6 +6,7 @@
   width: fit-content;
   transform: translateY(-50%);
   z-index: 10000;
+  transition: all 350ms ease;
   @include max-width(em(1650)) {
     display: none !important;
   }
@@ -185,4 +186,12 @@ section  {
     background-color: var(--clr-red-400);
     color: var(--clr-light-400);
   }
+ }
+
+
+ .--hide-steps {
+  transform: translateX(1rem) translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
  }

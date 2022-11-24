@@ -1,7 +1,8 @@
 function scrollEvents() {
   const sections = document.querySelectorAll('.section');
-  const sectionLinks = document.querySelectorAll('.steps-numbers__link'),
+  const sectionLinks = document.querySelectorAll('.steps-numbers__link');
   menu = document.querySelector('.steps-numbers');
+
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -37,3 +38,22 @@ function scrollEvents() {
 }
 
 scrollEvents();
+
+function removeStepsOnHomeSection() {
+  const homeSection = document.querySelector('.home'),
+  stepsInterface = document.querySelector('.--steps-fixed');
+  const homeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stepsInterface.classList.add('--hide-steps')
+      } else {
+        stepsInterface.classList.remove('--hide-steps')
+      }
+    })
+  }, {
+    threshold: .5
+  })
+  homeObserver.observe(homeSection);
+}
+
+removeStepsOnHomeSection();
