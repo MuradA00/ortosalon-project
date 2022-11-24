@@ -33,6 +33,8 @@
     flex-direction: column;
     grid-gap: rem(12);
     &__item {
+      flex: 0 auto;
+      text-align: center;
       grid-gap: rem(8);
       display: flex;
       align-items: center;
@@ -168,3 +170,19 @@
     }
   }
 }
+
+section  {
+  .steps-numbers__item {
+    width: rem(42);
+    height: rem(42);
+    justify-content: center !important;
+    background-color: hsla(350, 100%, 44%, 0.06);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .--active-number {
+    background-color: var(--clr-red-400);
+    color: var(--clr-light-400);
+  }
+ }
