@@ -108,12 +108,13 @@
       text-align: center;
     }
     &__info-inner {
-      p {}
+
     }
   }
   .capability-row {
 
     &__item {
+
       &:nth-child(2) {
         &::after {
           content: '' !important;
@@ -153,6 +154,9 @@
         max-width: rem(60);
       }
       &__item {
+        &::before {
+          transform: rotate(12deg) !important;
+        }
         max-width: 9.375rem;
         min-height: 9.375rem;
         &:nth-child(2) {
