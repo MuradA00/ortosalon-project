@@ -18,6 +18,20 @@
     grid-gap: clamp(rem(40), vw(83), rem(83));
   }
   .capability-row {
+    position: relative;
+    &::before {
+      content: url('../../img/usage/dark-arrow.svg');
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(140deg);
+    }
+    grid-gap: 4.375rem rem(7);
+    &__arrow {
+      &--rotated {
+        transform: scaleY(-1);
+      }
+    }
     &__item {
       background-color: var(--clr-light-400);
       &--stock {
@@ -92,6 +106,11 @@
     &__warning {
       font-size: rem(14);
     }
+    .capability-row {
+      &__arrow {
+        // max-width: rem(25);
+      }
+    }
   }
   .usage-row {
     &__item {
@@ -124,6 +143,35 @@
           .capability-row__icon {
             max-width: rem(60);
           }
+        }
+      }
+    }
+  }
+}
+
+@include max-width(25em) {
+  .usage {
+    .capability-row {
+      flex-direction: column;
+      grid-gap: rem(1.5);
+      &::before {
+        content: none;
+      }
+      &__arrow {
+        margin: 1rem 0;
+        transform: rotate(90deg);
+        max-width: rem(25);
+      }
+    }
+  }
+}
+
+@include min-width(25em) {
+  .usage {
+    .capability-row {
+      &__arrow {
+        &--hidden-arrow {
+          display: none;
         }
       }
     }
