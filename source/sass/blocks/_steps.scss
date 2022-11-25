@@ -206,12 +206,12 @@ section  {
 
 
  .--hide-steps {
-  .--steps-fixed  {
+
     .steps-numbers__item {
       pointer-events: none;
       opacity: 0;
       transform: translateX(15px);
       visibility: hidden;
     }
-  }
+
  }
