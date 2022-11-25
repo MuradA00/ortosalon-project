@@ -31,6 +31,11 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    &:nth-child(1) {
+      .remain__info-heading {
+        margin-bottom: rem(30);
+      }
+    }
     &::before {
       @include psevdo;
       top: 0;
@@ -73,7 +78,7 @@
     }
   }
   &__icon {
-    max-width: rem(61);
+    max-width: rem(100);
     aspect-ratio: 1 / 1;
   }
 }

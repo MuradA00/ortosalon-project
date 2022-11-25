@@ -30,6 +30,7 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: clamp(rem(50), vw(80), rem(80));
+    align-items: center;
   }
   &__top-title {
     color: var(--clr-yell-400);

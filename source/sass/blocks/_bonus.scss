@@ -12,8 +12,6 @@
   @include max-width($tm) {
     padding: $middle-spacing-padding 0;
   }
-  &__body {
-  }
   &__heading {
     margin-bottom: rem(41);
   }
@@ -34,7 +32,7 @@
     background-color: var(--clr-light-400);
     box-shadow: var(--white-box-shadow);
     border-radius: $br-12;
-    min-height: rem(220);
+    min-height: rem(267);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -51,12 +49,15 @@
     }
     &:nth-child(1) {
       #{$icon} {
-        max-width: rem(152);
+        max-width: rem(232);
       }
     }
     &:nth-child(2) {
+      .bonus__icon-wrapper {
+        grid-gap: rem(37);
+      }
       #{$icon} {
-        max-width: rem(190);
+        max-width: rem(211);
       }
     }
   }
