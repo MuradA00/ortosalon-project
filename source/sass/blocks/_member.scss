@@ -166,13 +166,17 @@
 
 @include max-width($mm) {
   .member {
+
     &__column-inner {
       display: flex;
       flex-direction: column;
       grid-gap: rem(30);
+
       &::after {
         width: 100% !important;
         height: rem(2) !important;
+        top: unset;
+        bottom: 50%;
       }
     }
     &__link {
@@ -180,14 +184,30 @@
       margin-inline: auto;
     }
     &__column {
+      &:nth-child(2) {
+        .member__column-heading {
+          margin-bottom: 2.25rem;
+        }
+      }
+      &:nth-child(3) {
+        .member__column-heading {
+          margin-bottom: 2.25rem;
+        }
+      }
       &:nth-child(1) {
         .member__column-heading {
-          margin-bottom: 2rem;
+          margin-bottom: 3.5rem;
         }
+        .member__column-descr {
+          margin-bottom: 0;
+        }
+      }
+      &:nth-child(3) {
+
       }
     }
     &__column-block {
-      min-height: rem(240);
+      min-height: rem(260);
     }
   }
 }
