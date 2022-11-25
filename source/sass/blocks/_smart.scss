@@ -112,6 +112,9 @@
     &:nth-child(2) {
       padding: 0;
       max-width: rem(490);
+      min-height: fit-content;
+      margin-top: rem(13);
+      margin-bottom: 0;
     }
   }
   .capability-row {
@@ -140,7 +143,6 @@
 
 @include max-width($tm) {
   .new-smart {
-
     grid-gap: 1rem !important;
       .smart__info-block {
         margin-bottom: 0;
@@ -209,7 +211,7 @@
         margin-bottom: 1rem;
       }
       &:nth-child(2) {
-        min-height: fit-content;
+
       }
       p {
         font-size: 1rem;
