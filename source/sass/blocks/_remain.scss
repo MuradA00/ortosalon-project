@@ -20,6 +20,7 @@
   &__subtitle {
     text-align: center;
     margin-bottom: rem(35);
+    font-size: rem(20);
   }
   &__column {
     box-shadow: var(--white-box-shadow);
@@ -104,6 +105,9 @@
       grid-gap: rem(30) 0;
       max-width: rem(360);
       margin-inline: auto;
+    }
+    &__subtitle {
+      font-size: 1rem;
     }
     &__inner {
       display: flex;

@@ -2,6 +2,16 @@
   padding: clamp(rem(60), vw(104), rem(104)) 0 clamp(rem(80), vw(124), rem(124));
   $order-width: rem(54);
   position: relative;
+  &__container {
+    max-width: calc(rem(1160) + $cont-padding);
+    @include max-width($tm) {
+      padding: 0 $mobile-cont-padding;
+      max-width: calc(rem(765) + $mobile-cont-padding);
+    }
+    @include max-width($mm) {
+      max-width: calc(rem(515) + $mobile-cont-padding);
+    }
+  }
   @include max-width($tm) {
     padding: $middle-spacing-padding 0;
   }
